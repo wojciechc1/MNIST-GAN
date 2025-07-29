@@ -2,8 +2,5 @@ GAN
 
 
 
-<p float="left">
-  <img src="metrics/d-1x_1000t_100e.png" width="110" />
-  <img src="metrics/d-1x_1000t_100e.png" width="110" /> 
-  <img src="metrics/d-1x_1000t_100e.png" width="110" />
-</p>
+ ![img1](metrics/d-1x_1000t_100e.png) | ![img2](metrics/d-2x_1000t_100e.png) | ![img3](metrics/d-3x_1000t_100e.png) |
+|--------------------------|--------------------------------------|--------------------------------------|
