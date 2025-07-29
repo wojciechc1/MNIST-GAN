@@ -1,7 +1,6 @@
 GAN
 
-
-
+___
  ![plot_avg_loss](metrics/d-1x_1000t_100e.png) | ![plot_avg_loss](metrics/d-2x_1000t_100e.png) | ![plot_avg_loss](metrics/d-3x_1000t_100e.png) |
 |--------------------------|--------------------------------------|--------------------------------------|
 
@@ -20,10 +19,17 @@ GAN
 - Possibly a much better result (G loss is lower than D's).
 - However, the trend suggests a role reversal, which is not desirable.
 
+---
+
+#### More traning data with D trained 3x less frequently:
+ ![plot_avg_loss](metrics/d-3x_1000t_100e.png) | ![plot_avg_loss](metrics/d-3x_10000t_100e.png) |
+|--------------------------|------------------------------------------------|
+
+The plot flips here, indicating the G started to fail. I think that best performance was likely around 30 iterations (see second plot).
+
+
 ### Summary:
 Training the D too often hinders the G’s laearning. Training it too rarely weakens its ability to distinguish. The best results come from balancing the learning pace of both networks.
-
-
 
 #### 📈 Legend 
 
@@ -35,8 +41,4 @@ Training the D too often hinders the G’s laearning. Training it too rarely wea
 | **G**        | Generator                |
 | 📊           | Average loss per epoch   |
 
-
- ![plot_avg_loss](metrics/d-3x_1000t_100e.png) | ![plot_avg_loss](metrics/d-3x_10000t_100e.png) |
-|--------------------------|------------------------------------------------|
-
-#### The plot flips here, indicating the G started to fail. I think that best performance was likely around 35 iterations (see second plot).
+___
