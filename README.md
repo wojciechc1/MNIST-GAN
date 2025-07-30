@@ -1,8 +1,8 @@
 # Conditional Deep Convolutional Generative Adversarial Network (cDCGAN) | on the MNIST DataSet
 
 ___
-## train.py
-## Training Loss Analysis
+## Training
+    Training Loss Analysis
  ![plot_avg_loss](metrics/d-1x_1000t_100e.png) | ![plot_avg_loss](metrics/d-2x_1000t_100e.png) | ![plot_avg_loss](metrics/d-3x_1000t_100e.png) |
 |--------------------------|--------------------------------------|--------------------------------------|
 
@@ -43,19 +43,15 @@ Training the D too often hinders the G’s laearning. Training it too rarely wea
 | 📊           | Average loss per epoch   |
 
 ___
-
-## Generated numbers by the trained model (0-9):
+## Evaluating
+    Generated numbers by the trained model (0-9):
 
 ![generated_nums](metrics/num_0.png) | ![generated_nums](metrics/num_1.png) | ![generated_nums](metrics/num_2.png) | ![generated_nums](metrics/num_3.png) | ![generated_nums](metrics/num_4.png) | ![generated_nums](metrics/num_5.png) | ![generated_nums](metrics/num_6.png) | ![generated_nums](metrics/num_7.png) | ![generated_nums](metrics/num_8.png) | ![generated_nums](metrics/num_9.png) |
 |---|---|---|---|---|---|---|---|---|---|
 
-## Inerpolation
+## Inerpolation 
 
-interpolation.py
-
-smooth transition between two classes of numbers
-
-1 -> 9
+    between class 1 and 9:
 
 <p>
   <img src="interpolation.gif" alt="Interpolation_gif" width="200"/>
