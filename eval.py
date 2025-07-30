@@ -8,7 +8,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 torch.set_default_device(device)
 
 generator = Generator()
-generator.load_state_dict(torch.load("saved_models/g2.pth"))
+generator.load_state_dict(torch.load("saved_models/g1.pth"))
 
 
 generator.eval()

@@ -19,6 +19,7 @@ ___
 - Possibly a much better result (G loss is lower than D's).
 - However, the trend suggests a role reversal, which is not desirable.
 
+(alternative - decreese D's  learning rate)
 
 ### More traning data with D trained 3x less frequently:
  ![plot_avg_loss](metrics/d-3x_1000t_100e.png) | ![plot_avg_loss](metrics/d-3x_10000t_100e.png) |

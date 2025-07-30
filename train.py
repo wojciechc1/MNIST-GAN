@@ -6,10 +6,13 @@ import torchvision.utils as vutils
 from utils import plot_losses, get_data
 
 
-batch_size = 32
-train_size = 60000
+batch_size = 64
+train_size = 10000
 latent_dim = 100 # losowe
-epochs = 2
+epochs = 20
+
+d_lr = 0.0002
+g_lr = 0.0003
 
 # data loader
 train_loader, test_loader = get_data(train_size=train_size, batch_size=batch_size)
@@ -20,14 +23,14 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 generator = Generator()
 discriminator = Discriminator()
 
-generator.load_state_dict(torch.load("g2.pth"))
-discriminator.load_state_dict(torch.load("d2.pth"))
+#generator.load_state_dict(torch.load("g2.pth"))
+#discriminator.load_state_dict(torch.load("d2.pth"))
 
 generator.to(device)
 discriminator.to(device)
 
-optimizer_D = torch.optim.Adam(discriminator.parameters(), lr=0.0002, betas=(0.5, 0.999))
-optimizer_G = torch.optim.Adam(generator.parameters(), lr=0.0002, betas=(0.5, 0.999))
+optimizer_D = torch.optim.Adam(discriminator.parameters(), lr=d_lr, betas=(0.5, 0.999))
+optimizer_G = torch.optim.Adam(generator.parameters(), lr=g_lr, betas=(0.5, 0.999))
 
 
 criterion = torch.nn.BCELoss()
@@ -46,7 +49,7 @@ def main():
         for i, (real_images, labels) in enumerate(train_loader):
             # trenowanie dyskryminatora rzadziej
             batch_size = real_images.size(0)
-            if i % 3 == 0:
+            if i % 1 == 0:
                 countD += 1
                 # dyskryminator
 
@@ -103,8 +106,8 @@ def main():
             vutils.save_image(fake_images, f"epoch_{epoch}.png", nrow=8, normalize=True)
 
 
-    torch.save(generator.state_dict(), "g2.pth")
-    torch.save(discriminator.state_dict(), "d2.pth")
+    torch.save(generator.state_dict(), "g4.pth")
+    torch.save(discriminator.state_dict(), "d4.pth")
 
 
 
