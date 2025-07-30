@@ -1,4 +1,4 @@
-# Conditional Deep Convolutional GAN (Conditional DCGAN)
+# Conditional Deep Convolutional Generative Adversarial Network (cDCGAN)
 
 
 ___
