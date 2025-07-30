@@ -1,6 +1,7 @@
 # Conditional Deep Convolutional Generative Adversarial Network (cDCGAN) | on the MNIST DataSet
 
 ___
+## train.py
 ## Training Loss Analysis
  ![plot_avg_loss](metrics/d-1x_1000t_100e.png) | ![plot_avg_loss](metrics/d-2x_1000t_100e.png) | ![plot_avg_loss](metrics/d-3x_1000t_100e.png) |
 |--------------------------|--------------------------------------|--------------------------------------|
@@ -50,8 +51,14 @@ ___
 
 ## Inerpolation
 
+interpolation.py
+
+smooth transition between two classes of numbers
+
 1 -> 9
 
 <p>
-  <img src="interpolation.gif" alt="Interpolation_gif" width="100"/>
+  <img src="interpolation.gif" alt="Interpolation_gif" width="200"/>
 </p>
+
+

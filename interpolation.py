@@ -24,7 +24,7 @@ generator.load_state_dict(torch.load("./saved_models/g1.pth"))
 generator.eval()
 
 
-z = torch.randn(1, latent_dim).to(device)  # jeden losowy wektor z
+z = torch.randn(1, latent_dim).to(device)  # jeden losowy wektor z dla wszystkich
 
 emb_start = generator.label_emb(torch.tensor(start_label, device=device))  # [latent_dim]
 emb_end = generator.label_emb(torch.tensor(end_label, device=device))      # [latent_dim]
