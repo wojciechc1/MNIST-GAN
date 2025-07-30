@@ -1,27 +1,27 @@
-GAN
+# Conditional Deep Convolutional GAN (Conditional DCGAN)
+
 
 ___
+## Training Loss Analysis
  ![plot_avg_loss](metrics/d-1x_1000t_100e.png) | ![plot_avg_loss](metrics/d-2x_1000t_100e.png) | ![plot_avg_loss](metrics/d-3x_1000t_100e.png) |
 |--------------------------|--------------------------------------|--------------------------------------|
 
 
-### D trained **every** iteration:
+### 1. D trained **every** iteration:
 
 - D performs too well (low D loss).
 - G can’t keep up (high G loss).
 
-### D trained **2×** less frequently:
-
+### 2.   D trained **2×** less frequently:
 - The generator still struggles to catch up (G loss is higher than D loss).
 
-### D trained **3×** less frequently:
+### 3. D trained **3×** less frequently:
 
 - Possibly a much better result (G loss is lower than D's).
 - However, the trend suggests a role reversal, which is not desirable.
 
----
 
-#### More traning data with D trained 3x less frequently:
+### More traning data with D trained 3x less frequently:
  ![plot_avg_loss](metrics/d-3x_1000t_100e.png) | ![plot_avg_loss](metrics/d-3x_10000t_100e.png) |
 |--------------------------|------------------------------------------------|
 

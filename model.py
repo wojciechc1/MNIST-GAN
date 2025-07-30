@@ -1,11 +1,14 @@
 import torch.nn as nn
+import torch
 
 class Discriminator(nn.Module):
     def __init__(self):
         super().__init__()
+        self.label_emb = nn.Embedding(10, 28 * 28)
+
         self.model = nn.Sequential(
             # 1x28x28 -> 64x14x14
-            nn.Conv2d(1, 64, kernel_size=4, stride=2, padding=1),
+            nn.Conv2d(2, 64, kernel_size=4, stride=2, padding=1),
             nn.LeakyReLU(0.2, inplace=True),
 
             # 64x14x14 -> 128x7x7
@@ -18,13 +21,18 @@ class Discriminator(nn.Module):
             nn.Sigmoid()
         )
 
-    def forward(self, x):
+    def forward(self, x, labels):
+        label_img = self.label_emb(labels).view(-1, 1, 28, 28)  # [B, 1, 28, 28]
+        x = torch.cat([x, label_img], dim=1)
+
         return self.model(x)
 
 
 class Generator(nn.Module):
     def __init__(self, latent_dim=100):
         super().__init__()
+        self.label_emb = nn.Embedding(10, latent_dim)
+
         self.model = nn.Sequential(
             nn.Linear(latent_dim, 128 * 7 * 7),
             nn.BatchNorm1d(128 * 7 * 7),
@@ -41,5 +49,7 @@ class Generator(nn.Module):
             nn.Tanh()
         )
 
-    def forward(self, z):
-        return self.model(z)
+    def forward(self, z, labels):
+        label_embedding = self.label_emb(labels)  # [B, latent_dim]
+        x = z + label_embedding  # warunkujemy noise
+        return self.model(x)
