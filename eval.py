@@ -1,17 +1,14 @@
 from model import Generator
 
 import torch
-import torch.optim as optim
 import torchvision.utils as vutils
-
-from utils import plot_losses
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 torch.set_default_device(device)
 
 generator = Generator()
-generator.load_state_dict(torch.load("./saved_models/generator.pth"))
+generator.load_state_dict(torch.load("saved_models/g2.pth"))
 
 
 generator.eval()

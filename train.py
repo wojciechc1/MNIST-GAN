@@ -1,16 +1,15 @@
-from get_data import get_data
 from model import Generator, Discriminator
 
 import torch
 import torch.optim as optim
 import torchvision.utils as vutils
-from utils import plot_losses
+from utils import plot_losses, get_data
 
 
 batch_size = 32
-train_size = 10000
+train_size = 60000
 latent_dim = 100 # losowe
-epochs = 30
+epochs = 2
 
 # data loader
 train_loader, test_loader = get_data(train_size=train_size, batch_size=batch_size)
@@ -20,6 +19,9 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 generator = Generator()
 discriminator = Discriminator()
+
+generator.load_state_dict(torch.load("g2.pth"))
+discriminator.load_state_dict(torch.load("d2.pth"))
 
 generator.to(device)
 discriminator.to(device)
@@ -101,8 +103,8 @@ def main():
             vutils.save_image(fake_images, f"epoch_{epoch}.png", nrow=8, normalize=True)
 
 
-    torch.save(generator.state_dict(), "generator.pth")
-    torch.save(discriminator.state_dict(), "discriminator.pth")
+    torch.save(generator.state_dict(), "g2.pth")
+    torch.save(discriminator.state_dict(), "d2.pth")
 
 
 

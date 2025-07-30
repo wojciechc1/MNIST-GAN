@@ -1,6 +1,4 @@
-# Conditional Deep Convolutional Generative Adversarial Network (cDCGAN)
-## on the MNIST DataSet
-
+# Conditional Deep Convolutional Generative Adversarial Network (cDCGAN) | on the MNIST DataSet
 
 ___
 ## Training Loss Analysis
@@ -44,7 +42,7 @@ Training the D too often hinders the G’s laearning. Training it too rarely wea
 
 ___
 
-## Final Generated Nums (0-9):
+## Generated numbers by the trained model (0-9):
 
 ![generated_nums](metrics/num_0.png) | ![generated_nums](metrics/num_1.png) | ![generated_nums](metrics/num_2.png) | ![generated_nums](metrics/num_3.png) | ![generated_nums](metrics/num_4.png) | ![generated_nums](metrics/num_5.png) | ![generated_nums](metrics/num_6.png) | ![generated_nums](metrics/num_7.png) | ![generated_nums](metrics/num_8.png) | ![generated_nums](metrics/num_9.png) |
 |---|---|---|---|---|---|---|---|---|---|
