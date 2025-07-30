@@ -52,4 +52,6 @@ ___
 
 1 -> 9
 
-![interpolation_gif](interpolation.gif)
+<p>
+  <img src="interpolation.gif" alt="Interpolation_gif" width="100"/>
+</p>
