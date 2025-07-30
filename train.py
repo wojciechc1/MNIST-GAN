@@ -7,9 +7,9 @@ from utils import plot_losses, get_data
 
 
 batch_size = 64
-train_size = 10000
+train_size = 1000
 latent_dim = 100 # losowe
-epochs = 20
+epochs = 10
 
 d_lr = 0.0002
 g_lr = 0.0003

@@ -48,3 +48,8 @@ ___
 ![generated_nums](metrics/num_0.png) | ![generated_nums](metrics/num_1.png) | ![generated_nums](metrics/num_2.png) | ![generated_nums](metrics/num_3.png) | ![generated_nums](metrics/num_4.png) | ![generated_nums](metrics/num_5.png) | ![generated_nums](metrics/num_6.png) | ![generated_nums](metrics/num_7.png) | ![generated_nums](metrics/num_8.png) | ![generated_nums](metrics/num_9.png) |
 |---|---|---|---|---|---|---|---|---|---|
 
+## Inerpolation
+
+1 -> 9
+
+![interpolation_gif](interpolation.gif)
